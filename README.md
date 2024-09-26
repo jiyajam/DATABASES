@@ -4,5 +4,6 @@
 
 ```sql
 SELECT * FROM goal;
-![Uploading Screenshot 2024-09-26 at 21.06.37.png…]()
+<img width="878" alt="Screenshot 2024-09-26 at 21 06 37" src="https://github.com/user-attachments/assets/4c00932e-bcf9-42bc-b1fd-7e5902430516">
+
 
