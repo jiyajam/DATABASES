@@ -1,6 +1,6 @@
 # DATABASES
 ## Exercise 2 
-### Copy this SQL query:
+### 1:
 
 ```sql
 SELECT * FROM goal;
