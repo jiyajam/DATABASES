@@ -91,6 +91,7 @@ SELECT
 
 ### 1:
 ```SELECT country.name AS "country name", airport.name AS "airport name"
+SELECT country.name AS "country name", airport.name AS "airport name"
 FROM country
 JOIN airport ON airport.iso_country = country.iso_country
 WHERE country.name = 'Iceland';
