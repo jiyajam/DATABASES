@@ -1,4 +1,7 @@
 # DATABASES
 ## Exercise 2 
- '''SELECT *
-FROM goal;
+### Copy this SQL query:
+
+```sql
+SELECT * FROM goal;
+
