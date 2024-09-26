@@ -1,7 +1,7 @@
 # DATABASES
-## Exercise 2
+## Exercise 1
 
-###answer 5 
+### 1.   5 
 
-
+2. 5
 
