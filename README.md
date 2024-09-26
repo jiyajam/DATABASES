@@ -1,5 +1,4 @@
 # DATABASES
 ## Exercise 2 
-#### 
-SELECT *
+#### '''SELECT *
 FROM goal;
