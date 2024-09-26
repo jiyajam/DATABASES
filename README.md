@@ -51,21 +51,28 @@ WHERE name LIKE '%F%';
 
 
 ###7
-SELECT location
+```SELECT location
 FROM game
-WHERE screen_name = 'Vesa'; 
+WHERE screen_name = 'Vesa';
+```
 
 <img width="323" alt="2 7" src="https://github.com/user-attachments/assets/94b8bf5e-0dfd-47f8-b5dc-c2d33e0ef13f">
 
 ###8
+```
 SELECT co2_consumed FROM game WHERE screen_name = 'Ilkka';
+```
 
 <img width="635" alt="2,8" src="https://github.com/user-attachments/assets/dab484a5-10bb-412d-a174-a8f93d9651b5">
 
 ###9
+```
 SELECT DISTINCT co2_budget FROM game;
+```
+<img width="485" alt="2 9" src="https://github.com/user-attachments/assets/2cc050b4-afa2-4fa5-89af-6e1f83b1e0d1">
 
 ###10
+```
 SELECT 
        screen_name,
        @ilkkas_budget AS co2_budget,
@@ -75,6 +82,7 @@ SELECT
         game
      WHERE 
         screen_name = 'Ilkka';
+```
 
 <img width="764" alt="2 10" src="https://github.com/user-attachments/assets/1d91e53c-27e3-457a-be92-c79af080627b">
 
