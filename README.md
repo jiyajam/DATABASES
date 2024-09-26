@@ -77,7 +77,7 @@ SELECT
        screen_name,
        @ilkkas_budget AS co2_budget,
        co2_consumed,
-         (@ilkkas_budget - co2_consumed) AS co2_left
+       (@ilkkas_budget - co2_consumed) AS co2_left
      FROM 
         game
      WHERE 
