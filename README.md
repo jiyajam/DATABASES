@@ -90,7 +90,8 @@ SELECT
 
 
 ### 1:
-```SELECT country.name AS "country name", airport.name AS "airport name"
+```
+SELECT country.name AS "country name", airport.name AS "airport name"
 SELECT country.name AS "country name", airport.name AS "airport name"
 FROM country
 JOIN airport ON airport.iso_country = country.iso_country
@@ -101,7 +102,8 @@ WHERE country.name = 'Iceland';
 
 
 ### 2:
-```SELECT airport.name AS "airport name"
+```
+SELECT airport.name AS "airport name"
 FROM airport
 JOIN country ON airport.iso_country = country.iso_country
 WHERE country.name = 'France' AND airport.type = 'large_airport';
@@ -119,7 +121,8 @@ WHERE country.continent = 'AN';
 
 
 ### 4:
-```SELECT a.elevation_ft
+```
+SELECT a.elevation_ft
 FROM airport AS a
 JOIN game AS g ON a.ident = g.location
 WHERE g.screen_name = "Heini";
@@ -127,7 +130,8 @@ WHERE g.screen_name = "Heini";
 <img width="352" alt="3 4" src="https://github.com/user-attachments/assets/dbca3f2d-8db7-42a3-b223-ca3fc22f5742">
 
 ### 5:
-```SELECT elevation_ft * 0.3048 AS elevation_m
+```
+SELECT elevation_ft * 0.3048 AS elevation_m
 FROM airport
 JOIN game ON airport.ident = game.location
 WHERE game.screen_name = 'Heini';
@@ -136,7 +140,8 @@ WHERE game.screen_name = 'Heini';
 
 
 ### 6:
-```SELECT airport.name
+```
+SELECT airport.name
 FROM airport
 JOIN game ON airport.ident = game.location
 WHERE game.screen_name = 'Ilkka';
@@ -145,7 +150,8 @@ WHERE game.screen_name = 'Ilkka';
 <img width="396" alt="3 6" src="https://github.com/user-attachments/assets/d2d89361-9057-4537-a795-40ddca5dadc1">
 
 ### 7:
-```SELECT country.name
+```
+SELECT country.name
 FROM airport
 JOIN game ON airport.ident = game.location
 JOIN country ON airport.iso_country = country.iso_country
@@ -155,7 +161,8 @@ WHERE game.screen_name = "Ilkka";
 
 
 ### 8:
-```SELECT name
+```
+SELECT name
 FROM goal, goal_reached, game
 WHERE game.id = game_id
   AND goal.id = goal_id
@@ -165,7 +172,8 @@ WHERE game.id = game_id
 
 
 ### 9;
-```SELECT airport.name
+```
+SELECT airport.name
 FROM airport
 JOIN game ON airport.ident = game.location
 JOIN goal_reached ON game.id = goal_reached.game_id
@@ -177,7 +185,8 @@ WHERE game.screen_name = "Ilkka" AND goal.name = "CLOUDS";
 
 
 ### 10:
-```SELECT country.name
+```
+SELECT country.name
 FROM country
 JOIN airport ON country.iso_country = airport.iso_country
 JOIN game ON airport.ident = game.location
