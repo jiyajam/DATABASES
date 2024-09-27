@@ -277,32 +277,59 @@ WHERE
 
 ### 1:
 ```
+SELECT 
+    CASE iso_country
+        WHEN 'JP' THEN 'Japan'
+        ELSE iso_country
+    END AS name
+FROM airport
+WHERE name LIKE 'Satsuma%';
+
 ```
+
+<img width="188" alt="5 1" src="https://github.com/user-attachments/assets/66950d8a-bd34-4ae2-981d-00d877cf9e46">
 
 ### 2:
 ```
+SELECT name 
+     FROM airport 
+     WHERE iso_country = 'MC';
 ```
+<img width="320" alt="5 2" src="https://github.com/user-attachments/assets/8f8adc7e-5e7c-48ce-b904-bfe739185d61">
+
 ### 3:
 ```
+SELECT DISTINCT game.screen_name
+FROM game
+JOIN goal_reached ON game.id = goal_reached.game_id
+JOIN goal ON goal_reached.goal_id = goal.id
+WHERE goal.name = 'CLOUDS';
 ```
+<img width="205" alt="5 3" src="https://github.com/user-attachments/assets/18cedd04-9f8b-48fa-a982-33aacd6c77a2">
+
+
 ### 4:
 ```
+SELECT name
+FROM country
+WHERE iso_country NOT IN (SELECT DISTINCT iso_country FROM airport);
 ```
+<img width="259" alt="5 4" src="https://github.com/user-attachments/assets/a2a8a039-089e-460f-85f8-f8902b3891f4">
+
 ### 5:
 ```
+SELECT goal.name AS "name"
+FROM goal
+WHERE id NOT IN (
+    SELECT goal_reached.goal_id
+    FROM goal_reached
+    JOIN game ON goal_reached.game_id = game.id
+    WHERE game.screen_name = 'Heini'
 ```
-### 6:
-```
-```
-### 7:
-```
-```
-### 8:
-```
-```
-### 10:
-```
-```
+<img width="195" alt="5 5" src="https://github.com/user-attachments/assets/b3e04434-52ac-415f-8807-a34bce81e22c">
+
+
+
 ## Exercise 6
 
 ### 1:
