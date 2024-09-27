@@ -200,32 +200,78 @@ WHERE game.screen_name = "Ilkka" AND goal.name = "CLOUDS";
 
 ### 1:
 ```
+SELECT 
+    country.name AS "country name", 
+    airport.name AS "airport name"
+FROM 
+    country 
+INNER JOIN 
+    airport 
+ON 
+    airport.iso_country = country.iso_country
+WHERE 
+    country.name = "Finland" 
+    AND scheduled_service = "yes";
 ```
+<img width="358" alt="4 1" src="https://github.com/user-attachments/assets/29a29e1c-29cb-4c45-9691-b21a1946ba78">
+
 
 ### 2:
 ```
+SELECT 
+    screen_name, 
+    airport.name
+FROM 
+    game 
+INNER JOIN 
+    airport ON location = ident;
 ```
+<img width="368" alt="4 2" src="https://github.com/user-attachments/assets/35841cc9-c19a-4cdc-bfdf-873b52659a72">
+
 ### 3:
 ```
+SELECT 
+    game.screen_name AS "screen_name", 
+    country.name AS "name"
+FROM 
+    game 
+JOIN 
+    airport ON game.location = airport.ident 
+JOIN 
+    country ON airport.iso_country = country.iso_country;
 ```
+<img width="301" alt="4 3" src="https://github.com/user-attachments/assets/41e74913-d607-4598-9a8b-654f76263320">
+
 ### 4:
 ```
+SELECT 
+    airport.name AS "name", 
+    game.screen_name AS "screen_name"
+FROM 
+    airport
+LEFT JOIN 
+    game ON airport.ident = game.location
+WHERE 
+    airport.name LIKE '%Hels%';
 ```
+<img width="484" alt="4 4" src="https://github.com/user-attachments/assets/ec528946-a908-4542-a9a7-4d544df227f3">
+
 ### 5:
 ```
+SELECT 
+    goal.name AS "name", 
+    game.screen_name AS "screen_name"
+FROM 
+    goal
+LEFT JOIN 
+    goal_reached ON goal.id = goal_reached.goal_id
+LEFT JOIN 
+    game ON goal_reached.game_id = game.id
+WHERE 
+    goal.name IN ('HOT', 'COLD', '0DEG', '10DEG', '20DEG', 'CLEAR', 'CLOUDS', 'WINDY');
 ```
-### 6:
-```
-```
-### 7:
-```
-```
-### 8:
-```
-```
-### 10:
-```
-```
+<img width="264" alt="4 5" src="https://github.com/user-attachments/assets/7bbca6d3-1913-467c-9cd2-da5f1377a0a3">
+
 
 ## Exercise 5
 
