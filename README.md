@@ -334,33 +334,116 @@ WHERE id NOT IN (
 
 ### 1:
 ```
+SELECT max(elevation_ft)
+FROM airport
+ORDER BY elevation_ft DESC
+LIMIT 1;
 ```
+
+<img width="184" alt="6 1" src="https://github.com/user-attachments/assets/4f8b0dc2-8a43-49aa-95be-a362096c96f6">
 
 
 ### 2:
 ```
+SELECT continent, COUNT(*) AS "count(*)"
+FROM country
+GROUP BY continent
+ORDER BY continent;
+
 ```
+<img width="189" alt="6 2" src="https://github.com/user-attachments/assets/e95c6266-7574-4b66-a9e9-d6973ff4e71d">
+
 ### 3:
 ```
+SELECT 
+    game.screen_name AS "screen_name", 
+    COUNT(goal_reached.goal_id) AS "count(*)"
+FROM 
+    game
+LEFT JOIN 
+    goal_reached ON game.id = goal_reached.game_id
+LEFT JOIN 
+    goal ON goal_reached.goal_id = goal.id
+WHERE 
+    goal.name IN ('HOT', 'COLD', '0DEG', '10DEG', '20DEG', 'CLEAR', 'CLOUDS', 'WINDY') 
+GROUP BY  game.screen_name;
 ```
+<img width="215" alt="6 3" src="https://github.com/user-attachments/assets/bbb717a1-be1c-4796-8774-fe6674c549b3">
+
 ### 4:
 ```
+SELECT screen_name
+FROM game
+WHERE co2_consumed = (
+    SELECT MIN(co2_consumed) 
+    FROM game
+);
 ```
+<img width="184" alt="6 4" src="https://github.com/user-attachments/assets/1380ac0a-915b-45b2-b70e-5056d61449e9">
+
 ### 5:
 ```
+SELECT country.name AS name, COUNT(*) AS "count(*)" 
+FROM airport
+JOIN country ON airport.iso_country = country.iso_country 
+GROUP BY country.name 
+ORDER BY airport_count DESC LIMIT 50;
 ```
+<img width="317" alt="6 5" src="https://github.com/user-attachments/assets/4e845b04-3dff-48bd-8edb-66a31585e65a">
+
 ### 6:
 ```
+SELECT country.name
+FROM airport, country
+WHERE airport.iso_country = country.iso_country
+GROUP BY country.iso_country
+HAVING COUNT(*) > 1000;
 ```
+<img width="224" alt="6 6" src="https://github.com/user-attachments/assets/37cdb66f-0f32-4e4a-8f14-4a255903ef8a">
+
 ### 7:
 ```
+SELECT name
+FROM airport
+WHERE elevation_ft = (
+    SELECT MAX(elevation_ft)
+    FROM airport
+);
 ```
+<img width="244" alt="6 7" src="https://github.com/user-attachments/assets/fd2f12f9-8171-490c-8df2-68ecb78d29d0">
+
 ### 8:
 ```
+SELECT country.name
+FROM airport
+JOIN country ON airport.iso_country = country.iso_country
+WHERE airport.elevation_ft = (
+    SELECT MAX(elevation_ft)
+    FROM airport
+);
 ```
+<img width="185" alt="6 8" src="https://github.com/user-attachments/assets/192c6dda-fb77-433e-a73e-3ffda90824a9">
+
+### 9:
+```
+SELECT COUNT(*) AS "count(*)"
+FROM goal
+JOIN goal_reached ON goal.id = goal_reached.goal_id
+JOIN game ON goal_reached.game_id = game.id
+WHERE game.screen_name = 'Vesa';
+```
+<img width="179" alt="6 9" src="https://github.com/user-attachments/assets/bb942bd0-1a79-4d46-9aef-21df7170ac42">
+
+
 ### 10:
 ```
+SELECT airport.name AS "name"
+FROM airport
+ORDER BY ABS(latitude_deg) DESC
+LIMIT 1;
 ```
+<img width="266" alt="6 10" src="https://github.com/user-attachments/assets/9250ad79-b031-4dde-b606-33ff457eab87">
+
 ## Exercise 7
 
 ### 1:
