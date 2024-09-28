@@ -448,16 +448,34 @@ LIMIT 1;
 
 ### 1:
 ```
+UPDATE game 
+SET location = (SELECT ident FROM airport WHERE name = 'Nottingham Airport') 
+WHERE screen_name = 'Vesa';
+
+-- Step 2: Update Vesa's co2_consumed by increasing it by 500
+UPDATE game 
+SET co2_consumed = co2_consumed + 500 
+WHERE screen_name = 'Vesa' 
+AND location = (SELECT ident FROM airport WHERE name = 'Nottingham Airport');
 ```
+<img width="440" alt="7 1" src="https://github.com/user-attachments/assets/b8f03255-140a-454b-a793-1084b5477537">
+
 
 ### 2:
+#### b.
 ```
+goal_reached
 ```
 ### 3:
 ```
+DELETE FROM goal_reached;
+``
+<img width="292" alt="7 3" src="https://github.com/user-attachments/assets/5466600a-c633-4d3a-9c3c-f6062b9537e8">
 ```
+
 ### 4:
 ```
+DELETE FROM game;
 ```
 ### 5:
 ```
