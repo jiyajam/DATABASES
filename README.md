@@ -469,56 +469,13 @@ goal_reached
 ### 3:
 ```
 DELETE FROM goal_reached;
-``
-<img width="292" alt="7 3" src="https://github.com/user-attachments/assets/5466600a-c633-4d3a-9c3c-f6062b9537e8">
 ```
+<img width="292" alt="7 3" src="https://github.com/user-attachments/assets/5466600a-c633-4d3a-9c3c-f6062b9537e8">
+
 
 ### 4:
 ```
 DELETE FROM game;
 ```
-### 5:
-```
-```
-### 6:
-```
-```
-### 7:
-```
-```
-### 8:
-```
-```
-### 10:
-```
-```
-## Exercise 8
 
-### 1:
-```
-```
 
-### 2:
-```
-```
-### 3:
-```
-```
-### 4:
-```
-```
-### 5:
-```
-```
-### 6:
-```
-```
-### 7:
-```
-```
-### 8:
-```
-```
-### 10:
-```
-```
